@@ -1,0 +1,14 @@
+Nuestra propuesta consiste en el desarrollo de una aplicación innovadora que incluye un sistema de registro de usuarios, 
+donde cada persona podrá crear una cuenta utilizando un nombre de usuario único al momento de iniciar sesión. 
+Este nombre de usuario se asociará a su cuenta personal y se utilizará de forma permanente a lo largo de la experiencia en la aplicación, 
+permitiendo identificar al jugador durante las diferentes actividades o juegos disponibles.
+La aplicación ofrecerá varias opciones y modos de juego, brindando a los usuarios experiencias divertidas y emocionantes. 
+Uno de estos modos será la posibilidad de abrir "cajas de armas", una función en la que los jugadores podrán desbloquear cajas al azar que contienen armas virtuales o elementos diversos. 
+La característica principal de esta función será el componente de azar, ya que la suerte del jugador influirá directamente en lo que reciba al abrir la caja. Dependiendo de lo que obtengan, 
+podrán ganar o perder dinero virtual que estará almacenado en su monedero dentro de la aplicación. 
+Además, otros factores como la calidad y el desgaste de los objetos obtenidos pueden influir en su valor o durabilidad, lo que afectará el saldo disponible.
+Otro modo de juego interesante será la opción de participar en apuestas relacionadas con partidos de fútbol. 
+Los usuarios podrán apostar a quién creen que ganará en los próximos partidos de fútbol, ya sea a nivel local o internacional. Al realizar estas apuestas, los jugadores tendrán la oportunidad de ganar o perder saldo en su monedero, dependiendo del resultado de los partidos en los que hayan apostado. Este modo de juego agregará un componente de emoción y estrategia, 
+ya que los usuarios deberán tomar decisiones basadas en sus conocimientos del fútbol, las estadísticas y sus intuiciones sobre los partidos.
+En resumen, la aplicación está diseñada para ofrecer a los usuarios una experiencia divertida y dinámica, en la que la suerte, 
+la estrategia y las decisiones personales jugarán un papel importante en el desarrollo de su saldo y en la interacción con otros jugadores.
