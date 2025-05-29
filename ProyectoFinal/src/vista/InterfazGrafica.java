@@ -17,11 +17,11 @@ public class InterfazGrafica extends JFrame {
     private JLabel skinTextoLabel;
     private JButton abrirCajaButton;
 
-    private Timer timer;
+    private Timer timer; // Controla la animación
     private int contadorAnimacion = 0;
     private final int duracionAnimacion = 10;
 
-    public InterfazGrafica(Simulador simulador) {
+    public InterfazGrafica(Simulador simulador) { // Constructor
         this.simulador = simulador;
         initGUI();
 
@@ -38,13 +38,13 @@ public class InterfazGrafica extends JFrame {
         });
     }
 
-    private void initGUI() {
+    private void initGUI() { // Método que configura la interfaz gráfica
         setTitle("Simulador Apertura de Cajas");
         setSize(450, 450);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
 
-        cajaLabel = new JLabel();
+        cajaLabel = new JLabel(); // Panel para mostrar la imagen
         cajaLabel.setHorizontalAlignment(JLabel.CENTER);
 
         JPanel skinPanel = new JPanel(new BorderLayout());
@@ -73,7 +73,7 @@ public class InterfazGrafica extends JFrame {
         cargarImagenCaja("caja.png");
     }
 
-    private void abrirCaja() {
+    private void abrirCaja() { // Método que simula la acción de abrir
         abrirCajaButton.setEnabled(false);
         contadorAnimacion = 0;
         skinImagenLabel.setIcon(null);
@@ -88,7 +88,7 @@ public class InterfazGrafica extends JFrame {
             } else {
                 timer.stop();
                 Skin skin = simulador.abrirCaja();
-                skinTextoLabel.setText("�Obtuviste: " + skin + "!");
+                skinTextoLabel.setText("¡Obtuviste: " + skin + "!");
                 ImageIcon iconSkin = cargarImagenDesdeRecurso(skin.getRutaImagen(), 200, 200);
                 if (iconSkin != null) {
                     skinImagenLabel.setIcon(iconSkin);
@@ -108,7 +108,7 @@ public class InterfazGrafica extends JFrame {
         timer.start();
     }
 
-    public void cargarImagenCaja(String nombreArchivo) {
+    public void cargarImagenCaja(String nombreArchivo) { // Método que carga y ajusta el tamaño
         ImageIcon icon = cargarImagenDesdeRecurso("imagenes/" + nombreArchivo, 300, 200);
         if (icon != null) {
             cajaLabel.setIcon(icon);
