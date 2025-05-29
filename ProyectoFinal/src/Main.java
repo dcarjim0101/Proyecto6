@@ -2,37 +2,34 @@ import modelo.Caja;
 import modelo.Skin;
 import modelo.Usuario;
 import logica.Simulador;
-import persistencia.GestorPersistencia;
+import persistencia.GestorBD;
 import vista.InterfazGrafica;
 
-import javax.swing.*;
-import java.io.IOException;
-
 public class Main {
-    public static void main(String[] args) {
+public static void main(String[] args) {
+// Creamos una caja
+Caja caja = new Caja();
 
-        // Crear la caja y añadir skins
-        Caja caja = new Caja();
-        caja.agregarSkin(new Skin("Desert Eagle | Blaze", "Legendaria", "blaze.png"));
-        caja.agregarSkin(new Skin("AK-47 | Redline", "Rara", "redline.png"));
-        caja.agregarSkin(new Skin("M4A1-S | Guardian", "Rara", "guardian.png"));
-        caja.agregarSkin(new Skin("P250 | Mehndi", "Común", "mehndi.png"));
+// Creamos algunas skins
+Skin s1 = new Skin("Espada de Fuego", "Legendaria", "imagenes/espada_fuego.png");
+Skin s2 = new Skin("Arco del Viento", "Rara", "imagenes/arco_viento.png");
+Skin s3 = new Skin("Hacha de Hielo", "Común", "imagenes/hacha_hielo.png");
 
-        // Cargar usuario guardado o nuevo
-        Usuario usuario;
-        try {
-            usuario = GestorPersistencia.cargarUsuario();
-        } catch (IOException | ClassNotFoundException e) {
-            usuario = new Usuario();
-        }
+// Las agregamos a la caja
+caja.agregarSkin(s1);
+caja.agregarSkin(s2);
+caja.agregarSkin(s3);
 
-        //Se crea simulador para gestionar la logica, conectar con la interfaz grafica controlando las acciones del usuario
-        Simulador simulador = new Simulador(caja, usuario);
+// También las guardamos en la base de datos
+GestorBD.guardarSkin(s1);
+GestorBD.guardarSkin(s2);
+GestorBD.guardarSkin(s3);
 
-        //Correcta creacion de la gui ademas de crear instancia
-        SwingUtilities.invokeLater(() -> {
-            InterfazGrafica gui = new InterfazGrafica(simulador);
-            gui.cargarImagenCaja("caja.png");
-        });
-    }
+// Creamos un usuario y el simulador
+Usuario usuario = new Usuario();
+Simulador simulador = new Simulador(caja, usuario);
+
+// Lanzamos la interfaz gráfica
+new InterfazGrafica(simulador);
+}
 }

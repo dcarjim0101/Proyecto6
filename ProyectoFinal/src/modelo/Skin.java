@@ -1,32 +1,28 @@
 package modelo;
 
+import jakarta.persistence.*;
+
 import java.io.Serializable;
 
+@Entity
 public class Skin implements Serializable {
-    private String nombre;
-    private String rareza;  // Por ejemplo: Común, Rara, Legendaria
-    private String rutaImagen; // Ruta a la imagen para mostrar
 
-    public Skin(String nombre, String rareza, String rutaImagen) {
-        this.nombre = nombre;
-        this.rareza = rareza;
-        this.rutaImagen = rutaImagen;
-    }
+@Id
+@GeneratedValue(strategy = GenerationType.IDENTITY)
+private Long id;
 
-    public String getNombre() {
-        return nombre;
-    }
+private String nombre;
+private String rareza;
+private String rutaImagen;
 
-    public String getRareza() {
-        return rareza;
-    }
+// Constructor vacÃ­o requerido por JPA
+public Skin() {}
 
-    public String getRutaImagen() {
-        return rutaImagen;
-    }
+public Skin(String nombre, String rareza, String rutaImagen) {
+this.nombre = nombre;
+this.rareza = rareza;
+this.rutaImagen = rutaImagen;
+}
 
-    @Override
-    public String toString() {
-        return rareza + " - " + nombre;
-    }
+// Getters y toString igual
 }
